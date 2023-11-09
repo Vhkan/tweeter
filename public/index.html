@@ -4,6 +4,14 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Fonts: Bungee: 400, Sourse Sans 3: 300/600+italic from GFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+
+   <!-- FontsAwesome link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -20,8 +28,17 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class="title">
+        tweeter
+      </div>
+
+      <div class="write-tweet">
+        <span><b>Write</b> a new tweet</span> 
+        <i class="fa-solid fa-angles-down fa-sm" style="color: #e74427;"></i>     
+      </div>      
     </nav>
+
+    
 
     <!-- Page-specific (main) content here -->
     <main class="container"></main>

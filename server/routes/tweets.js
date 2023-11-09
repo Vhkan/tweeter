@@ -1,9 +1,9 @@
 "use strict";
 
-const userHelper    = require("../lib/util/user-helper")
+const userHelper = require("../lib/util/user-helper")
 
-const express       = require('express');
-const tweetsRoutes  = express.Router();
+const express = require('express');
+const tweetsRoutes = express.Router();
 
 module.exports = function(DataHelpers) {
 
@@ -22,7 +22,8 @@ module.exports = function(DataHelpers) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
-
+//Checking if the req.body.user is defined or truthy. 
+//If it is not/doesn't exist, it generates a random user obj using a generateRandomUser() function
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,
