@@ -20,11 +20,19 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
 
+      <!-- Jquiery library script -->
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <!-- App JS scripts -->
+    <script type="text/javascript" src="/scripts/client.js" defer></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
+
+  
+
+
   </head>
 
   <body>
@@ -54,7 +62,7 @@
           <textarea name="text" id="tweet-text"></textarea>
           <div class="below-tweet">
             <button class="tweet-btn" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" id="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>      
@@ -62,8 +70,5 @@
 
 
        
- <!-- JS script -->
- <script src=""></script>
-
   </body>
 </html>
