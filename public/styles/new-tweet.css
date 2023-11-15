@@ -13,6 +13,11 @@
   color: white;
   border-radius: 4px;
 }
+.tweet-btn:hover {
+  transition: 0.3s ease;
+  cursor: pointer;
+  color: #83a8e8;
+}
 
 #tweet-text {
   display: flex;
@@ -21,7 +26,7 @@
   background: transparent;
   border-bottom: 3px solid #45474B;
   resize: none;
-  width: 700px;
+  width: 800px;
   height: auto;
   font-weight: bolder;
 }
@@ -31,4 +36,98 @@
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
   padding-top: 0.5em;
+}
+
+.counterFontBlack {
+  color: #45474B;
+}
+
+.counterFontRed {
+  color: red;
+}
+
+.all-tweets {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.all-tweets:hover {
+  box-shadow: 4px 4px 8px #555657;
+}
+
+.tweets {
+  display: flex;
+  flex-direction: column;
+  border: 2px;
+  border-radius: 4px;
+  height: 200px;
+  width: 800px;
+  border-style: solid;
+  color:  #696a6b;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.tweets-line {
+  display: flex;
+  width: 700px;
+  height: 50px;
+  border-bottom: 3px solid #555657;
+  align-self: center; 
+  align-items: center;
+  padding-left: 1em;
+}
+
+.row-1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+}
+
+.row-3 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.right-underline {
+  padding-top: 1em;
+}
+
+.heart-icon {
+  color: #1860dc;
+}
+.heart-icon:hover {
+  color: #FFC436;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.flag-icon {
+  color: #1860dc;
+}
+.flag-icon:hover {
+  color: #FFC436;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.retweet-icon {
+  color: #1860dc;
+}
+.retweet-icon:hover {
+  color: #FFC436;
+  transition: 0.3s ease;
+  cursor: pointer;
 }

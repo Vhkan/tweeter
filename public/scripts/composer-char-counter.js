@@ -10,9 +10,9 @@ $(document).ready(function() {
     $('#counter').text(charLeft);
     //Applying styles on remaining symbols
     if (charLeft < 0) {
-      $('#counter').css('color', 'red');
+      $('#counter').addClass('counterFontRed');
     } else {
-      $('#counter').css('color', '#45474B')
-    }
+      $('#counter').addClass('counterFontBlack');
+    };
   });
 });

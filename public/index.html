@@ -20,17 +20,12 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
 
-      <!-- Jquiery library script -->
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS scripts -->
     <script type="text/javascript" src="/scripts/client.js" defer></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
-
-  
 
 
   </head>
@@ -49,7 +44,7 @@
 
     <header>
         <img src="/images/profile-hex.png">
-        <h2>Tweeta Tweetivna</h2>
+        <h2>Tweeta Uza</h2>
       <br>
     </header>
     
@@ -65,10 +60,43 @@
             <output name="counter" id="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-      </section>      
+      </section>   
+         
+      
+      <section class="all-tweets">
+        <section class="tweets">
+          <div class="row-1">
+            <div class="left-content">
+              <div class="head-logo-name">
+                <i class="fa-solid fa-user-ninja fa-xl" style="color: #45474B;"></i>
+                <span class="name">name</span>
+              </div>
+            </div>
+            <div class="right-content">@userName</div>
+          </div>
+
+          <div class="row-2">
+            <label class="tweets-line" for="all-tweets">Hello World</label>
+          </div>
+
+          <div class="row-3">
+            <div class="left-underline">
+              <h5>10 days ago</h5> 
+            </div>
+            <div class="right-underline">
+              <i class="flag-icon fa-solid fa-flag fa-sm"></i>
+              <i class="retweet-icon fa-solid fa-retweet fa-sm"></i>
+              <i class="heart-icon fa-solid fa-heart fa-sm"></i>          
+            </div>
+          </div>
+        </section>    
+      </section>
     </main>
 
 
+
+     <!-- jQuery library script -->
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
        
   </body>
 </html>
