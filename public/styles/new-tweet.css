@@ -59,7 +59,7 @@
   box-shadow: 4px 4px 8px #555657;
 }
 
-.tweets {
+.tweets-container {
   display: flex;
   flex-direction: column;
   border: 2px;
@@ -68,7 +68,6 @@
   width: 800px;
   border-style: solid;
   color:  #696a6b;
-
   justify-content: center;
   align-items: center;
 }
