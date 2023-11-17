@@ -34,8 +34,8 @@ app.use("/tweets", tweetsRoutes);
 
 
 //Makign a Tweet with POST
-app.post('/tweets', (req, res) => {
-});
+// app.post('/tweets', (req, res) => {
+// });
 
 
 app.listen(PORT, () => {

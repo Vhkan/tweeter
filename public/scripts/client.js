@@ -1,32 +1,36 @@
- /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+/*
+* Client-side JS logic goes here
+* jQuery is already loaded
+* Reminder: Use (and do all your DOM work in) jQuery's document ready function
+*/
 
 
- //Implementing create tweets function
-const createTweetElement = function (data) {
-//HTML tweets container
-const $tweet = $(`     
+
+//Tweets "DB"
+// const data = [];
+
+//Implementing create tweets function
+const createTweetElement = function(tweet) {
+  //HTML tweets container/ template string
+  const $tweet = $(`      
 <section class="tweets-container">
 <div class="row-1">
   <div class="left-content">
     <div class="head-logo-name">
-      <i class="fa-solid fa-user-ninja fa-xl" style="color: #45474B;"></i>
-      <span class="name">${data.user.name}</span>
+    <img src="${tweet.user.avatars}"></i>
+      <span class="name">${tweet.user.name}</span>
     </div>
   </div>
-  <div class="right-content">${data.user.handle}</div>
+  <div class="right-content">${tweet.user.handle}</div>
 </div>
 
 <div class="row-2">
-  <label class="tweets-line" for="all-tweets">${data.content.text}</label>
+  <label class="tweets-line" for="all-tweets">${tweet.content.text}</label>
 </div>
 
 <div class="row-3">
   <div class="left-underline">
-    <h5>${data.created_at}</h5> 
+    <h5>${timeago.format(tweet.created_at)}</h5> 
   </div>
   <div class="right-underline">
     <i class="flag-icon fa-solid fa-flag fa-sm"></i>
@@ -41,46 +45,63 @@ const $tweet = $(`
 
 </section>
 `);
-
-return $tweet;
+ 
+  return $tweet;
 };
 
 
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
+//Rendering our tweets on the page
 const renderTweets = function(tweets) {
-  //To clean tweets
   $('.all-tweets').html('');
-// loops through tweets
-for (let tweet of tweets) {
-  const newTweet = createTweetElement(tweet);
-  $('.all-tweets').append(newTweet);
+  for (let tweet of tweets) {
+    const newTweet = createTweetElement(tweet);
+    //Appending each new tweet element to the all-tweets container
+    $('.all-tweets').append(newTweet);
+  };
 };
-};
+// renderTweets(data);
 
 
-renderTweets(data);
+//An event listener that listens for the submit events
+$("#create-new-tweet").on('submit', function(event) {
+  event.preventDefault();
+//function turns a set of form data into a query string
+  const $formData = $(this).serialize();
+  //getting tweets value
+  const $tweetText = $('#tweet-text').val();
+  
+//Tweets validation for no text/exceeding 140 chars 
+  if(!$tweetText) {
+    alert("The tweet should contain text")
+  } else if ($tweetText.length > 140) {
+    alert("The tweet text should not exceed 140 characters");
+  };
+ 
+  //AJAX POST request that sends the form data to the server
+  $.ajax({
+    url: '/tweets',
+    data: $formData,
+    method: "POST",
+    success: (data) => {
+      console.log(data);
+    },
+    error: (error) => {
+      console.log(error);
+    }
+  })
+});
+
+//Function for fetcing/GET tweets from localhost
+const loadTweets = function () {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    dataType: 'json'
+    }).then((tweets) => {
+      renderTweets(tweets);
+    }).catch((error) => {
+      console.log("Error is:", error);
+    })
+  };
+
+loadTweets();

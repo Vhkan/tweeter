@@ -86,10 +86,9 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding-top: 1em;
+  padding-top: 1.5em;
   padding-left: 1em;
   padding-right: 1em;
-  padding-bottom: 0.5em;
 }
 
 .row-3 {
