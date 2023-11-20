@@ -25,7 +25,7 @@ const createTweetElement = function(tweet) {
 </div>
 
 <div class="row-2">
-  <label class="tweets-line" for="all-tweets">${tweet.content.text}</label>
+  <label class="tweets-line" for="all-tweets">${$('<div>').text(tweet.content.text).html()}</label>
 </div>
 
 <div class="row-3">
@@ -70,6 +70,7 @@ $("#create-new-tweet").on('submit', function(event) {
   const $formData = $(this).serialize();
   //getting tweets value
   const $tweetText = $('#tweet-text').val();
+  // const $safeTweetText = $('#tweet-text').text($tweetText);
 
   //Tweets validation for no text/exceeding 140 chars 
   if (!$tweetText) {
