@@ -4,11 +4,6 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-
-
-//Tweets "DB"
-// const data = [];
-
 //Implementing create tweets function
 const createTweetElement = function(tweet) {
   //HTML tweets container/ template string
@@ -23,11 +18,9 @@ const createTweetElement = function(tweet) {
   </div>
   <div class="right-content">${tweet.user.handle}</div>
 </div>
-
 <div class="row-2">
-  <label class="tweets-line" for="all-tweets">${$('<div>').text(tweet.content.text).html()}</label>
+  <p class="tweets-line" for="all-tweets">${$('<div>').text(tweet.content.text).html()}</p>
 </div>
-
 <div class="row-3">
   <div class="left-underline">
     <h5>${timeago.format(tweet.created_at)}</h5> 
@@ -66,6 +59,16 @@ const renderTweets = function(tweets) {
 //An event listener that listens for the submit events
 $("#create-new-tweet").on('submit', function(event) {
   event.preventDefault();
+
+  //Hiding/popping error msg
+  setTimeout(() => {
+    $('.error-message').fadeOut('slow');
+    $('#tweet-text').val("");
+    $('#counter').text(140).removeClass().addClass('counterFontBlack');
+  }, 3000);
+
+  $('.error-message').empty();
+
   //function turns a set of form data into a query string
   const $formData = $(this).serialize();
   //getting tweets value
@@ -74,9 +77,9 @@ $("#create-new-tweet").on('submit', function(event) {
 
   //Tweets validation for no text/exceeding 140 chars 
   if (!$tweetText) {
-    alert("The tweet should contain text")
+    $(".error-message").append('<i class="fa-solid fa-triangle-exclamation error-message"></i> The tweet should contain text! <i class="fa-solid fa-triangle-exclamation error-message"></i>').slideDown();
   } else if ($tweetText.length > 140) {
-    alert("The tweet text should not exceed 140 characters");
+    $(".error-message").append('<i class="fa-solid fa-triangle-exclamation error-message"></i> The tweet text should not exceed 140 characters! <i class="fa-solid fa-triangle-exclamation error-message"></i>').slideDown();
   } else {
     //AJAX POST request that sends the form data to the server
     $.ajax({
@@ -84,7 +87,7 @@ $("#create-new-tweet").on('submit', function(event) {
       data: $formData,
       method: "POST",
     }).then(() => {
-      $('#tweet.text').val();
+      $('#tweet-text').val("");
       loadTweets();
     }).catch((error) => {
       console.log(error);

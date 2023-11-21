@@ -4,7 +4,7 @@
   align-items: center;
   align-content: center;
   width: 100%;
-  height: 6em;
+  height: auto;
 }
 
 .tweet-btn {
@@ -25,10 +25,10 @@
   outline: 0;
   background: transparent;
   border-bottom: 3px solid #45474B;
-  resize: none;
   width: 800px;
-  height: auto;
+  height: 2em;
   font-weight: bolder;
+  resize: none;
 }
 
 .below-tweet {
@@ -64,36 +64,47 @@
   flex-direction: column;
   border: 2px;
   border-radius: 4px;
-  height: 200px;
-  width: 800px;
+  height: auto;
+  width: 900px;
   border-style: solid;
   color:  #696a6b;
   justify-content: center;
   align-items: center;
+  text-wrap: wrap;
 }
 
 .tweets-line {
-  display: flex;
-  width: 700px;
-  height: 50px;
+  height: auto;
+  margin: 0 auto;
+  width: 800px;
+  max-width: 100%;
   border-bottom: 3px solid #555657;
   align-self: center; 
   align-items: center;
   padding-left: 1em;
+  padding-top: 1em;
+  padding-right: 1em;
+  word-wrap: break-word;  
 }
 
 .row-1 {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding-top: 1.5em;
+  padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.row-2 {
+  display: flex;
+  width: 100%;
 }
 
 .row-3 {
   display: flex;
   width: 100%;
+  height: auto;
   justify-content: space-between;
   padding-left: 2em;
   padding-right: 2em;
@@ -129,3 +140,12 @@
   transition: 0.3s ease;
   cursor: pointer;
 }
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1em;
+  font-weight: bold;
+  color: #e61919;
+}
+
