@@ -59,8 +59,9 @@
   gap: 0.5em;
 }
 
-.all-tweets:hover {
+.tweets-container:hover {
   box-shadow: 4px 4px 8px #555657;
+  cursor: pointer;
 }
 
 .tweets-container {
@@ -80,8 +81,6 @@
   display: flex;
   height: auto;
   margin: 0 auto;
-  /* width: 800px;
-  max-width: 100%; */
   width: 100%;
   border-bottom: 3px solid #555657;
   align-self: center; 
