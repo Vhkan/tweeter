@@ -48,14 +48,15 @@
 }
 
 .all-tweets {
-  /* display: flex; */
+  display: flex;
   width: 100%;
   max-width: 900px;
   flex-direction: column;
   margin-top: 1em;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   transition: 0.3s ease;
+  gap: 0.5em;
 }
 
 .all-tweets:hover {
@@ -151,4 +152,21 @@
   padding-bottom: 1em;
   font-weight: bold;
   color: #e61919;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    float: right;
+    width: 70%;
+    padding-top: 6em;
+    padding-bottom: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  header {
+    padding-top: 15em;
+    float: left;
+    width: 30%;
+  }
 }
