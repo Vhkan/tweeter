@@ -6,7 +6,7 @@
 
 //Implementing create tweets function
 const createTweetElement = function(tweet) {
-  //HTML tweets container/ template string
+  //HTML tweets container
   const $tweet = $(`      
 <section class="tweets-container">
 <div class="row-1">
@@ -31,21 +31,16 @@ const createTweetElement = function(tweet) {
     <i class="heart-icon fa-solid fa-heart fa-sm"></i>          
   </div>
 </div>
-
 <div>
   <article class="tweet"></article>
 </div>
-
 </section>
 `);
-
   return $tweet;
 };
 
-
 //Rendering our tweets on the page
 const renderTweets = function(tweets) {
-  // $('.all-tweets').html('');
   $('.all-tweets').empty();
   for (let tweet of tweets) {
     const newTweet = createTweetElement(tweet);
@@ -53,8 +48,6 @@ const renderTweets = function(tweets) {
     $('.all-tweets').append(newTweet);
   };
 };
-// renderTweets(data);
-
 
 //An event listener that listens for the submit events
 $("#create-new-tweet").on('submit', function(event) {
@@ -73,7 +66,6 @@ $("#create-new-tweet").on('submit', function(event) {
   const $formData = $(this).serialize();
   //getting tweets value
   const $tweetText = $('#tweet-text').val();
-  // const $safeTweetText = $('#tweet-text').text($tweetText);
 
   //Tweets validation for no text/exceeding 140 chars 
   if (!$tweetText) {

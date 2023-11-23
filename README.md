@@ -4,7 +4,8 @@ The Tweeter project is a single-page Twitter clone that was done as part of the 
 
 ## Final Product
 
-screenshots...
+![Tweeter Screenshot Desktop View](https://github.com/Vhkan/tweeter/blob/main/public/docs/Tweeter%20Desktop%20Look%20sm.png)
+![Tweeter Screenshot Tab View](https://github.com/Vhkan/tweeter/blob/main/public/docs/Tweeter%20Tab%20Look.png)
 
 ## Getting Started
 
