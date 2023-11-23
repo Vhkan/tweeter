@@ -15,7 +15,7 @@ The Tweeter project is a single-page Twitter clone that was done as part of the 
 4. Go to <http://localhost:8080/> in your browser.
 5. Make a tweet by typing your text into the "Tweet line" text area and click "TWEET" button. 
 6. Your tweet will be displayed on the page.
-7. The tweet input field allows a user to type a maximum of 140 charaters. Going over the limited ammount of characters will not allow a user to make a tweet and will display a warning error. A warning errow will be displayed to the user in case of an attempt to make a tweet with no text typed into the text input field.
+7. The tweet input field allows a user to type a maximum of 140 charaters. Going over the limited ammount of characters will not allow a user to make a tweet and will display a warning error. A warning error will be displayed to the user in case of an attempt to make a tweet with no text typed into the text input field.
 
 ## Dependencies
 
