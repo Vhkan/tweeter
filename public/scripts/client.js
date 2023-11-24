@@ -56,10 +56,9 @@ $("#create-new-tweet").on('submit', function(event) {
   //Hiding/popping error msg
   setTimeout(() => {
     $('.error-message').fadeOut('slow');
-    $('#tweet-text').val("");
-    $('#counter').text(140).removeClass().addClass('counterFontBlack');
   }, 3000);
-
+  
+  $('#counter').text(140).removeClass().addClass('counterFontBlack');
   $('.error-message').empty();
 
   //function turns a set of form data into a query string
@@ -95,7 +94,9 @@ const loadTweets = function() {
     method: 'GET',
     dataType: 'json'
   }).then((tweets) => {
-    renderTweets(tweets);
+    //Sorting twets by the date created_at
+    const sortedTweets = tweets.sort((x, y) => new Date(y.created_at) - new Date(x.created_at));
+    renderTweets(sortedTweets);
   }).catch((error) => {
     console.log("Error is:", error);
   })
