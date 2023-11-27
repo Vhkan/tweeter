@@ -1,6 +1,7 @@
 //Settting the character counter
 $(document).ready(function() {
   console.log("Link works");
+
   $('#tweet-text').on('input', function() {
     const tweet = $(this).val();
     let tweetLength = tweet.length;
@@ -11,8 +12,8 @@ $(document).ready(function() {
     //Applying styles on remaining symbols
     if (charLeft < 0) {
       $('#counter').addClass('counterFontRed');
-    } else {
-      $('#counter').addClass('counterFontBlack');
+    } else if (charLeft >= 0) {
+      $('#counter').removeClass().addClass('counterFontBlack');
     };
   });
 });

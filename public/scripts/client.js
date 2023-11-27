@@ -4,6 +4,11 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
+//Wrapping all the code into the $(doc..) func to ensure 
+//that JS code won't run until the DOM is fully loaded
+$(document).ready(function() {
+  console.log("Client works");
+
 //Implementing create tweets function
 const createTweetElement = function(tweet) {
   //HTML tweets container
@@ -58,7 +63,6 @@ $("#create-new-tweet").on('submit', function(event) {
     $('.error-message').fadeOut('slow');
   }, 3000);
   
-  $('#counter').text(140).removeClass().addClass('counterFontBlack');
   $('.error-message').empty();
 
   //function turns a set of form data into a query string
@@ -79,6 +83,7 @@ $("#create-new-tweet").on('submit', function(event) {
       method: "POST",
     }).then(() => {
       $('#tweet-text').val("");
+      $('#counter').val("140");
       loadTweets();
     }).catch((error) => {
       console.log(error);
@@ -103,3 +108,5 @@ const loadTweets = function() {
 };
 
 loadTweets();
+
+});
